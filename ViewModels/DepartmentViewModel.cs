@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using TestCSharp.ViewModels;
+using TestCSharp.Models;
 
 namespace TestCSharp.ViewModels
 {
@@ -11,6 +11,12 @@ namespace TestCSharp.ViewModels
         public bool IsAuditor { get; set; }
         public string PlantId { get; set; } = string.Empty;
 
-        public IEnumerable<Plant> Plants { get; set; } = new List<Plant>();
+        
+        public List<Plant> Plants { get; set; } = new List<Plant>();
+
+        // Default constructor
+        public DepartmentViewModel()
+        {
+        }
     }
 }

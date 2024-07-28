@@ -1,18 +1,22 @@
-using System.Collections.Generic;
-using TestCSharp.ViewModels;
-using TestCSharp.Models;
+using System.ComponentModel.DataAnnotations;
+using TestCSharp.ViewModels; 
 
 namespace TestCSharp.ViewModels
 {
-    public class PositionViewModel
+    public class PlantViewModel
     {
         public string Id { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
-        public string DepartmentId { get; set; } = string.Empty;
-        public string PlantId { get; set; } = string.Empty;
 
-        public IEnumerable<Department> Departments { get; set; } = new List<Department>();
-        public IEnumerable<Plant> Plants { get; set; } = new List<Plant>();
+        [Required]
+        [StringLength(100)]
+        public string Name { get; set; } = string.Empty;
+
+        [Required]
+        public string Location { get; set; } = string.Empty;
+
+        
+        public PlantViewModel()
+        {
+        }
     }
 }
-
